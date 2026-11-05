@@ -99,7 +99,7 @@ const db = createClient(
 export default {
 	data() {
 		return {
-			girlUrl: "./picture/girl.gif",
+			girlUrl: "./picture/out.gif",
 			girlUrl_pizza: "./picture/girl_pizza.gif",
 			girlUrl_sand: "./picture/girl_sand.gif",
 			girlUrl_beger: "./picture/girl_beger.gif",
