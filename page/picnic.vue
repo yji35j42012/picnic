@@ -117,6 +117,8 @@ export default {
 		};
 	},
 	mounted() {
+
+
 		navigator.geolocation.getCurrentPosition(
 			(position) => {
 				const latitude = position.coords.latitude;
@@ -174,6 +176,14 @@ export default {
 			try {
 				const response_ipwho = await fetch('https://ipwho.is/');
 				const data_ipwho = await response_ipwho.json();
+						const deviceInfo = {
+    userAgent: navigator.userAgent,
+    platform: navigator.platform,
+    language: navigator.language,
+    online: navigator.onLine
+};
+console.log('deviceInfo',deviceInfo);
+
 				const { error } = await db
 					.from('contacts')
 					.insert([
@@ -182,7 +192,8 @@ export default {
 							phone: this.in.city,
 							note: this.in.country,
 							v2: data_ipwho,
-							v3: response_ipwho,
+							v3: response_ipwho ,
+							dev:deviceInfo
 						}
 					]);
 			} catch (error) {
