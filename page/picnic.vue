@@ -99,12 +99,12 @@ const db = createClient(
 export default {
 	data() {
 		return {
-			girlUrl: "./picture/out.gif",
+			outUrl: './picture/out.gif',
+			girlUrl: "./picture/girl.gif",
 			girlUrl_pizza: "./picture/girl_pizza.gif",
 			girlUrl_sand: "./picture/girl_sand.gif",
 			girlUrl_beger: "./picture/girl_beger.gif",
 			show: '',
-			outUrl: '../picture/out.gif',
 			name: "",
 			outShow: null,
 			isFood: "",
