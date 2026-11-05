@@ -13,7 +13,7 @@
 				開始野餐 ♡
 			</button>
 		</div>
-		<img :src="outUrl" alt="" style="display: none;">
+		<img :src="outUrl" alt="">
 	</div>
 
 	<div :class="['scene', outShow]">
@@ -99,10 +99,10 @@ const db = createClient(
 export default {
 	data() {
 		return {
-			girlUrl: "../picture/girl.gif",
-			girlUrl_pizza: "../picture/girl_pizza.gif",
-			girlUrl_sand: "../picture/girl_sand.gif",
-			girlUrl_beger: "../picture/girl_beger.gif",
+			girlUrl: "./picture/girl.gif",
+			girlUrl_pizza: "./picture/girl_pizza.gif",
+			girlUrl_sand: "./picture/girl_sand.gif",
+			girlUrl_beger: "./picture/girl_beger.gif",
 			show: '',
 			outUrl: '../picture/out.gif',
 			name: "",
