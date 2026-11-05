@@ -1,80 +1,80 @@
 .scene {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 100vh;
-    margin: auto;
-    overflow: hidden;
+	position: relative;
+	width: 100%;
+	max-width: 400px;
+	height: 100vh;
+	margin: auto;
+	overflow: hidden;
 
-    /* 野餐森林背景 */
+	/* 野餐森林背景 */
 }
 
 /* 標題 */
 .title {
-    position: absolute;
-    top: 6%;
-    width: 100%;
-    text-align: center;
-    color: #fff9e9;
-    font-size: clamp(25px, 4vw, 42px);
-    letter-spacing: 5px;
-    text-shadow: 0 3px 10px #45351c;
-    z-index: 5;
+	position: absolute;
+	top: 6%;
+	width: 100%;
+	text-align: center;
+	color: #fff9e9;
+	font-size: clamp(25px, 4vw, 42px);
+	letter-spacing: 5px;
+	text-shadow: 0 3px 10px #45351c;
+	z-index: 5;
 }
 
 /* 野餐墊 */
 .picnic-blanket {
-    position: absolute;
-    width: 95%;
-    height: 230px;
-    bottom: 12%;
-    left: 50%;
-    transform: translateX(-50%) perspective(700px) rotateX(5deg);
+	position: absolute;
+	width: 95%;
+	height: 230px;
+	bottom: 12%;
+	left: 50%;
+	transform: translateX(-50%) perspective(700px) rotateX(5deg);
 
-    background-color: #fff1e1;
+	background-color: #fff1e1;
 
-    background-image:
-        repeating-linear-gradient(0deg,
-            transparent 0px,
-            transparent 40px,
-            rgba(202, 83, 79, 0.65) 40px,
-            rgba(202, 83, 79, 0.65) 80px),
-        repeating-linear-gradient(90deg,
-            transparent 0px,
-            transparent 40px,
-            rgba(202, 83, 79, 0.65) 40px,
-            rgba(202, 83, 79, 0.65) 80px);
+	background-image:
+		repeating-linear-gradient(0deg,
+			transparent 0px,
+			transparent 40px,
+			rgba(202, 83, 79, 0.65) 40px,
+			rgba(202, 83, 79, 0.65) 80px),
+		repeating-linear-gradient(90deg,
+			transparent 0px,
+			transparent 40px,
+			rgba(202, 83, 79, 0.65) 40px,
+			rgba(202, 83, 79, 0.65) 80px);
 
-    border: 8px solid #fff4e8;
-    border-radius: 12px 12px 30px 30px;
+	border: 8px solid #fff4e8;
+	border-radius: 12px 12px 30px 30px;
 
-    box-shadow: 0 18px 35px #17240f66;
-    z-index: 2;
+	box-shadow: 0 18px 35px #17240f66;
+	z-index: 2;
 }
 
 /* 野餐墊上的食物 */
 .food-container {
-    position: absolute;
-    z-index: 4;
+	position: absolute;
+	z-index: 4;
 
-    width: min(85%, 1050px);
-    left: 50%;
-    bottom: 17%;
+	width: min(85%, 1050px);
+	left: 50%;
+	bottom: 17%;
 
-    transform: translateX(-50%);
+	transform: translate(-50%, 40px);
 
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 20px;
 }
 
 .food {
-    width: 28%;
-    text-align: center;
-    cursor: pointer;
+	width: 28%;
+	text-align: center;
+	cursor: pointer;
 
-    transition: transform 0.4s ease;
+	transition: transform 0.4s ease;
 }
 
 // .food:hover {
@@ -83,161 +83,357 @@
 
 /* 食物盤 */
 .food-plate {
-    width: 100%;
-    height: 95px;
+	width: 100%;
+	height: 95px;
 
-    background: rgba(255, 250, 238, 0.94);
-    border-radius: 50%;
+	background: rgba(255, 250, 238, 0.94);
+	border-radius: 50%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    box-shadow:
-        0 8px 12px rgba(70, 40, 20, 0.25),
-        inset 0 0 0 5px #fff;
+	box-shadow:
+		0 8px 12px rgba(70, 40, 20, 0.25),
+		inset 0 0 0 5px #fff;
 
-    border: 2px solid #e8d7bb;
+	border: 2px solid #e8d7bb;
 }
 
 .food-emoji {
-    font-size: clamp(55px, 7vw, 85px);
-    filter: drop-shadow(2px 5px 3px #0002);
+	font-size: clamp(55px, 7vw, 85px);
+	filter: drop-shadow(2px 5px 3px #0002);
 }
 
 .food-name {
-    margin-top: 12px;
-    display: inline-block;
-    padding: 7px 20px;
+	margin-top: 12px;
+	display: inline-block;
+	padding: 7px 20px;
 
-    background: #fffaf0;
-    color: #78502f;
+	background: #fffaf0;
+	color: #78502f;
 
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 17px;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 17px;
 
-    box-shadow: 0 3px 8px #0002;
+	box-shadow: 0 3px 8px #0002;
 }
 
 /* 落葉 */
 .leaf {
-    position: absolute;
-    top: -60px;
-    z-index: 6;
-    pointer-events: none;
+	position: absolute;
+	top: -60px;
+	z-index: 6;
+	pointer-events: none;
 
-    animation: falling linear forwards;
+	animation: falling linear forwards;
 }
 
 @keyframes falling {
-    0% {
-        transform: translate(0, -50px) rotate(0deg);
-        opacity: 0;
-    }
+	0% {
+		transform: translate(0, -50px) rotate(0deg);
+		opacity: 0;
+	}
 
-    10% {
-        opacity: 1;
-    }
+	10% {
+		opacity: 1;
+	}
 
-    50% {
-        transform: translate(70px, 50vh) rotate(180deg);
-    }
+	50% {
+		transform: translate(70px, 50vh) rotate(180deg);
+	}
 
-    100% {
-        transform: translate(-50px, 110vh) rotate(420deg);
-        opacity: 0;
-    }
+	100% {
+		transform: translate(-50px, 110vh) rotate(420deg);
+		opacity: 0;
+	}
 }
 
 /* 底部文字 */
 .footer {
-    position: absolute;
-    bottom: 2%;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 15px;
-    text-shadow: 0 2px 5px #333;
-    z-index: 5;
+	position: absolute;
+	bottom: 2%;
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+	text-shadow: 0 2px 5px #333;
+	z-index: 5;
 }
 
 /* 手機版 */
 @media (max-width: 600px) {
 
-    .picnic-blanket {
-        width: 95%;
-        height: 230px;
-        bottom: 12%;
-    }
+	.picnic-blanket {
+		width: 95%;
+		height: 230px;
+		bottom: 12%;
+	}
 
-    .food-container {
-        width: 94%;
-        bottom: 23%;
-        gap: 8px;
-    }
+	.food-container {
+		width: 94%;
+		bottom: 23%;
+		gap: 8px;
+	}
 
-    .food-plate {
-        height: 95px;
-    }
+	.food-plate {
+		height: 95px;
+	}
 
-    .food-emoji {
-        font-size: 43px;
-    }
+	.food-emoji {
+		font-size: 43px;
+	}
 
-    .food-name {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
+	.food-name {
+		font-size: 12px;
+		padding: 6px 10px;
+	}
 
-    .title {
-        top: 8%;
-        letter-spacing: 2px;
-    }
+	.title {
+		top: 8%;
+		letter-spacing: 2px;
+	}
 }
 
 .leafBox {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
 }
 
 .food {
-    position: relative;
-    text-align: center;
+	position: relative;
+	text-align: center;
 }
 
 .food_girl {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 160%;
-    transform: translate(-18%, -100%);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 160%;
+	transform: translate(-18%, -100%);
 }
 
 .food_girl._pizza {
-    width: 135%;
-    transform: translate(-12%, -100%);
+	width: 135%;
+	transform: translate(-12%, -100%);
 }
 
 .food_girl._sand {
-    width: 130%;
-    transform: translate(-12%, -100%);
+	width: 130%;
+	transform: translate(-12%, -100%);
 }
 
 .food_note {
-    position: absolute;
-    top: -60%;
-    left: -54%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    width: 100%;
-    height: 140px;
-    background: url('../../picture/pink_yellow_frame_transparent.png')no-repeat center /contain;
+	position: absolute;
+	top: -60%;
+	left: -54%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+	width: 100%;
+	height: 140px;
+	background: url('../../picture/pink_yellow_frame_transparent.png')no-repeat center /contain;
+}
+
+.scene {
+	opacity: 0;
+}
+
+.out {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	padding: 45px 20px 0;
+}
+
+.picnic-name-card {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 380px;
+	margin: 20px auto;
+	padding: 30px 25px;
+	text-align: center;
+	background: #fffdf5;
+	border: 2px solid #e8e5d5;
+	border-radius: 24px;
+	box-shadow: 0 8px 20px #526b4515;
+	font-family: "Noto Sans TC", sans-serif;
+}
+
+.picnic-decoration {
+	font-size: 35px;
+	margin-bottom: 8px;
+}
+
+.picnic-name-card h2 {
+	color: #526b45;
+	font-size: 24px;
+	margin: 0 0 8px;
+	letter-spacing: 2px;
+}
+
+.picnic-subtitle {
+	color: #999b86;
+	font-size: 13px;
+	margin-bottom: 28px;
+}
+
+.picnic-form {
+	text-align: left;
+}
+
+.picnic-form label {
+	display: block;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.input-wrap {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 0 14px;
+	background: #faf8ee;
+	border: 1.5px solid #d9dfc9;
+	border-radius: 13px;
+	transition: .25s;
+}
+
+.input-wrap:focus-within {
+	border-color: #829b70;
+	box-shadow: 0 0 0 4px #829b7018;
+	background: #fff;
+}
+
+.input-wrap span {
+	font-size: 17px;
+}
+
+.input-wrap input {
+	width: 100%;
+	height: 48px;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #596b4d;
+	font-size: 14px;
+	font-family: inherit;
+}
+
+.input-wrap input::placeholder {
+	color: #b5b6a5;
+}
+
+.picnic-form button {
+	width: 100%;
+	margin-top: 20px;
+	padding: 14px;
+	border: none;
+	border-radius: 50px;
+	background: #78936a;
+	color: white;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: .25s;
+}
+
+.picnic-form button:hover {
+	background: #627d55;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 12px #78936a35;
+}
+
+.picnic-form button:active {
+	transform: scale(.97);
+}
+
+.picnic-footer {
+	margin-top: 22px;
+	color: #aaa78e;
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+
+.scene.on {
+	opacity: 1;
+}
+
+
+.scene .title {
+	transform: translateY(20px);
+	transition-duration: 1s;
+}
+
+.scene.on .title {
+	transform: translateY(0);
+}
+
+.scene .picnic-blanket {
+	opacity: 0;
+	transition-delay: .5s;
+	transition-duration: 1s;
+}
+
+.scene.on .picnic-blanket {
+	opacity: 1;
+}
+
+.scene .food {
+	opacity: 0;
+	transform: translateY(20px);
+	transition-duration: 1s;
+}
+
+.scene .food:nth-child(1).on {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.scene .food:nth-child(2).on {
+	opacity: 1;
+	transition-delay: .2s;
+	transform: translateY(0);
+}
+
+.scene .food:nth-child(3).on {
+	opacity: 1;
+	transition-delay: .3s;
+	transform: translateY(0);
+}
+
+.out.on img {
+	opacity: 0;
+	transition-duration: .3s;
+}
+
+.out.on .picnic-form {
+	opacity: 0;
+	transform: translateY(-20px);
+	transition-duration: .3s;
+}
+
+.food_girl._first{
+	opacity: 0;
+	transition-duration: .7s;
+}
+
+.food_girl._first.on{
+	opacity: 1;
 }

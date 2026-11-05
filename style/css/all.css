@@ -129,7 +129,7 @@ select {
   width: min(85%, 1050px);
   left: 50%;
   bottom: 17%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 40px);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -281,4 +281,203 @@ select {
   width: 100%;
   height: 140px;
   background: url("../../picture/pink_yellow_frame_transparent.png") no-repeat center/contain;
+}
+
+.scene {
+  opacity: 0;
+}
+
+.out {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 45px 20px 0;
+}
+
+.picnic-name-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 380px;
+  margin: 20px auto;
+  padding: 30px 25px;
+  text-align: center;
+  background: #fffdf5;
+  border: 2px solid #e8e5d5;
+  border-radius: 24px;
+  box-shadow: 0 8px 20px rgba(82, 107, 69, 0.0823529412);
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.picnic-decoration {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.picnic-name-card h2 {
+  color: #526b45;
+  font-size: 24px;
+  margin: 0 0 8px;
+  letter-spacing: 2px;
+}
+
+.picnic-subtitle {
+  color: #999b86;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.picnic-form {
+  text-align: left;
+}
+
+.picnic-form label {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  background: #faf8ee;
+  border: 1.5px solid #d9dfc9;
+  border-radius: 13px;
+  transition: 0.25s;
+}
+
+.input-wrap:focus-within {
+  border-color: #829b70;
+  box-shadow: 0 0 0 4px rgba(130, 155, 112, 0.0941176471);
+  background: #fff;
+}
+
+.input-wrap span {
+  font-size: 17px;
+}
+
+.input-wrap input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #596b4d;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.input-wrap input::-moz-placeholder {
+  color: #b5b6a5;
+}
+
+.input-wrap input::placeholder {
+  color: #b5b6a5;
+}
+
+.picnic-form button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  background: #78936a;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.picnic-form button:hover {
+  background: #627d55;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(120, 147, 106, 0.2078431373);
+}
+
+.picnic-form button:active {
+  transform: scale(0.97);
+}
+
+.picnic-footer {
+  margin-top: 22px;
+  color: #aaa78e;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.scene.on {
+  opacity: 1;
+}
+
+.scene .title {
+  transform: translateY(20px);
+  transition-duration: 1s;
+}
+
+.scene.on .title {
+  transform: translateY(0);
+}
+
+.scene .picnic-blanket {
+  opacity: 0;
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+}
+
+.scene.on .picnic-blanket {
+  opacity: 1;
+}
+
+.scene .food {
+  opacity: 0;
+  transform: translateY(20px);
+  transition-duration: 1s;
+}
+
+.scene .food:nth-child(1).on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scene .food:nth-child(2).on {
+  opacity: 1;
+  transition-delay: 0.2s;
+  transform: translateY(0);
+}
+
+.scene .food:nth-child(3).on {
+  opacity: 1;
+  transition-delay: 0.3s;
+  transform: translateY(0);
+}
+
+.out.on img {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+.out.on .picnic-form {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-duration: 0.3s;
+}
+
+.food_girl._first {
+  opacity: 0;
+  transition-duration: 0.7s;
+}
+
+.food_girl._first.on {
+  opacity: 1;
 }/*# sourceMappingURL=all.css.map */
