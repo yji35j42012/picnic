@@ -1,0 +1,284 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+*:hover,
+*:focus,
+*:active {
+  outline: 0;
+  -moz-outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  font-family: "Helvetica", sans-serif;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  font-size: 15px;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+select {
+  border: none;
+  -webkit-appearance: none;
+}
+
+@media (pointer: fine) and (max-resolution: 2dppx), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* scroll bar style setting */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B9BDC5;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+  }
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(30, 35, 15, 0.08), rgba(30, 35, 15, 0.15)), url("../../picture/bg.png") center center/cover no-repeat;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  /* 野餐森林背景 */
+}
+
+/* 標題 */
+.title {
+  position: absolute;
+  top: 6%;
+  width: 100%;
+  text-align: center;
+  color: #fff9e9;
+  font-size: clamp(25px, 4vw, 42px);
+  letter-spacing: 5px;
+  text-shadow: 0 3px 10px #45351c;
+  z-index: 5;
+}
+
+/* 野餐墊 */
+.picnic-blanket {
+  position: absolute;
+  width: 95%;
+  height: 230px;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%) perspective(700px) rotateX(5deg);
+  background-color: #fff1e1;
+  background-image: repeating-linear-gradient(0deg, transparent 0px, transparent 40px, rgba(202, 83, 79, 0.65) 40px, rgba(202, 83, 79, 0.65) 80px), repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(202, 83, 79, 0.65) 40px, rgba(202, 83, 79, 0.65) 80px);
+  border: 8px solid #fff4e8;
+  border-radius: 12px 12px 30px 30px;
+  box-shadow: 0 18px 35px rgba(23, 36, 15, 0.4);
+  z-index: 2;
+}
+
+/* 野餐墊上的食物 */
+.food-container {
+  position: absolute;
+  z-index: 4;
+  width: min(85%, 1050px);
+  left: 50%;
+  bottom: 17%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.food {
+  width: 28%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+/* 食物盤 */
+.food-plate {
+  width: 100%;
+  height: 95px;
+  background: rgba(255, 250, 238, 0.94);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 12px rgba(70, 40, 20, 0.25), inset 0 0 0 5px #fff;
+  border: 2px solid #e8d7bb;
+}
+
+.food-emoji {
+  font-size: clamp(55px, 7vw, 85px);
+  filter: drop-shadow(2px 5px 3px rgba(0, 0, 0, 0.1333333333));
+}
+
+.food-name {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 7px 20px;
+  background: #fffaf0;
+  color: #78502f;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 17px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1333333333);
+}
+
+/* 落葉 */
+.leaf {
+  position: absolute;
+  top: -60px;
+  z-index: 6;
+  pointer-events: none;
+  animation: falling linear forwards;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(0, -50px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(70px, 50vh) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50px, 110vh) rotate(420deg);
+    opacity: 0;
+  }
+}
+/* 底部文字 */
+.footer {
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  text-shadow: 0 2px 5px #333;
+  z-index: 5;
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+  .picnic-blanket {
+    width: 95%;
+    height: 230px;
+    bottom: 12%;
+  }
+  .food-container {
+    width: 94%;
+    bottom: 23%;
+    gap: 8px;
+  }
+  .food-plate {
+    height: 95px;
+  }
+  .food-emoji {
+    font-size: 43px;
+  }
+  .food-name {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .title {
+    top: 8%;
+    letter-spacing: 2px;
+  }
+}
+.leafBox {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.food {
+  position: relative;
+  text-align: center;
+}
+
+.food_girl {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 160%;
+  transform: translate(-18%, -100%);
+}
+
+.food_girl._pizza {
+  width: 135%;
+  transform: translate(-12%, -100%);
+}
+
+.food_girl._sand {
+  width: 130%;
+  transform: translate(-12%, -100%);
+}
+
+.food_note {
+  position: absolute;
+  top: -60%;
+  left: -54%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  width: 100%;
+  height: 140px;
+  background: url("../../picture/pink_yellow_frame_transparent.png") no-repeat center/contain;
+}/*# sourceMappingURL=all.css.map */

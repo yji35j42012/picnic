@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>森林野餐日</title>
+	<link rel="stylesheet" href="./style/css/all.css">
+
+</head>
+
+<body>
+	<div id="app" class="wrap">
+		<div class="leafBox"></div>
+		<div :class="['content ',nowPage]">
+			<router-view></router-view>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+	<script src="./js/libs/vue.global_3_5_42.js"></script>
+	<script src="./js/libs/vue-router_v4_6_4.js"></script>
+	<script src="./js/libs/vuex_4_1_0.js"></script>
+	<script src="./js/supabase-auth-config.js"></script>
+	<script src="./js/libs/vue3-sfc-loader.js"></script>
+	<!-- <script src="./js/quote-proxy-config.js"></script> -->
+	<script src="./store/store.js"></script>
+	<script src="./js/app.js"></script>
+	<script src="./js/route.js"></script>
+	<script>
+
+		const app = Vue.createApp({
+			data() {
+				return {
+					nowPage: null,
+				};
+			},
+			mounted() {
+				// 每隔一段時間飄落一片葉子
+				setInterval(() => {
+					this.createLeaf();
+				}, 1800);
+			},
+			methods: {
+				createLeaf() {
+					const leafTypes = ["🍂", "🍃", "🍁"];
+					const leaf = document.createElement("div");
+					leaf.className = "leaf";
+					leaf.innerText =
+						leafTypes[Math.floor(Math.random() * leafTypes.length)];
+					leaf.style.left = Math.random() * 100 + "vw";
+					// 隨機大小
+					leaf.style.fontSize =
+						(18 + Math.random() * 18) + "px";
+					// 隨機速度
+					const duration = 7 + Math.random() * 8;
+					leaf.style.animationDuration = duration + "s";
+					document.querySelector(".leafBox").appendChild(leaf);
+					// 動畫結束後移除
+					setTimeout(() => {
+						leaf.remove();
+					}, duration * 1000);
+				}
+			}
+		});
+
+		app.use(router);
+		app.use(window.loginStore)
+		app.mount("#app");
+
+	</script>
+
+</body>
+
+</html>
